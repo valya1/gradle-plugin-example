@@ -1,7 +1,6 @@
 package ru.myorg.demo.domain.messageDecorator
 
 import org.junit.Test
-import ru.myorg.demo.domain.messageDecorator.LoveGradleMessageDecorator
 
 class LoveGradleMessageDecoratorTest {
 

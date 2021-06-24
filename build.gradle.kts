@@ -1,6 +1,7 @@
 plugins {
   kotlin("jvm") version "1.5.10"
   id("ru.myorg.demo.codegen-plugin")
+  id("ru.myorg.demo.precompiled-demo")
 }
 
 simpleCodegen {
