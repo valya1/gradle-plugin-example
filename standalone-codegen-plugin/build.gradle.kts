@@ -20,17 +20,17 @@ gradlePlugin {
   }
 }
 
-publishing {
-  publications {
-    create<MavenPublication>("codegen-plugin") {
-      artifactId = "codegen-plugin"
-      groupId = "ru.myorg.demo"
-      version = "1.0.0"
-      from(components["kotlin"])
-    }
-  }
-
-  repositories {
+//publishing {
+//  publications {
+//    create<MavenPublication>("codegen-plugin") {
+//      artifactId = "codegen-plugin"
+//      groupId = "ru.myorg.demo"
+//      version = "1.0.0"
+//      from(components["kotlin"])
+//    }
+//  }
+//
+//  repositories {
 //    maven {
 //      name = "remote"
 //      url = uri("https://some-remote-repo")
@@ -39,8 +39,8 @@ publishing {
 //        password = project.ext["MY_REMOTE_REPO_PASSWORD"] as String
 //      }
 //    }
-  }
-}
+//  }
+//}
 
 repositories {
   mavenCentral()

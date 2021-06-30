@@ -15,6 +15,13 @@ class CodegenPluginTest {
   fun canSuccessfullyPrintMessageToFileInProjectDir() {
 
     /**
+     * Готовим сообщение message
+     */
+    val messageFileName = "message.txt"
+    val messageFile = tempFolder.newFile(messageFileName)
+    messageFile.bufferedWriter().write("Hello!")
+
+    /**
      * Готовим build.gradle
      */
     val generatedPackageName = "ru.myorg.demo.example"
@@ -28,7 +35,7 @@ class CodegenPluginTest {
               "}\n" +
               "\n" +
               "simpleCodegen {\n" +
-              "  messageFile = layout.projectDirectory.file(\"message.txt\").asFile\n" +
+              "  messageFile = layout.projectDirectory.file(\"$messageFileName\")\n" +
               "  packageName = \"$generatedPackageName\"\n" +
               "}\n" +
               "\n" +
@@ -38,17 +45,10 @@ class CodegenPluginTest {
               "\n" +
               "dependencies {\n" +
               "  implementation(kotlin(\"stdlib\"))\n" +
-              "}\n"
+              "}"
         )
       }
 
-
-    /**
-     * Готовим сообщение message
-     */
-    val messageFileName = "message.txt"
-    val messageFile = tempFolder.newFile(messageFileName)
-    messageFile.bufferedWriter().write("Hello!")
 
     /**
      * Запускаем Gradle Daemon и билдим проект.

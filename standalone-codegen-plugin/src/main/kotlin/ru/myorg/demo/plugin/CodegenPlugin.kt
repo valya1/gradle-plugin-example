@@ -32,8 +32,10 @@ class CodegenPlugin : Plugin<Project> {
       }
     }
 
-    (target.extensions["sourceSets"] as SourceSetContainer)["main"]
-      .java
-      .srcDir(extension.outputDir)
+    target.afterEvaluate {
+      (target.extensions["sourceSets"] as SourceSetContainer)["main"]
+        .java
+        .srcDir(extension.outputDir)
+    }
   }
 }

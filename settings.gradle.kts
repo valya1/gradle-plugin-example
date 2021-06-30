@@ -1,7 +1,8 @@
 pluginManagement {
   includeBuild("standalone-codegen-plugin")
-  includeBuild("precompiled-gradle-plugin")
+  includeBuild("standalone-precompiled-gradle-plugin")
 }
 
-rootProject.name = "plugins-usage-example"
-
+rootProject.name = "gradle-plugins-example"
+include("android-common-plugin-usage")
+include("precompiled-standalone-plugin-usage")

@@ -9,7 +9,7 @@ class LoveGradleMessageDecoratorTest {
   @Test
   fun `prints Love Gradle at the end `() {
     val testMessage = "test"
-    val expectedResultMessage = "test\nLove Gradle"
+    val expectedResultMessage = "test Love Gradle"
     val resultMessage = messageDecorator.decorate(testMessage)
     assert(resultMessage == expectedResultMessage)
   }
