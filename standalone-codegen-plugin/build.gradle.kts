@@ -1,6 +1,5 @@
 plugins {
-  kotlin("jvm") version "1.5.10"
-  `java-gradle-plugin`
+  `kotlin-dsl`
   `maven-publish`
 }
 
@@ -79,5 +78,4 @@ dependencies {
 
   implementation("com.squareup:kotlinpoet:1.7.2")
   implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
-  implementation(gradleKotlinDsl())
 }

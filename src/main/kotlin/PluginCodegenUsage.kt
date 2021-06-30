@@ -1,4 +1,4 @@
-import ru.myorg.demo.SimpleClass
+import ru.myorg.example.SimpleClass
 
 class PluginCodegenUsage {
 

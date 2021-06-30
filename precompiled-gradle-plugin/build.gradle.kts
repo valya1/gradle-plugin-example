@@ -5,8 +5,3 @@ plugins {
 repositories {
     mavenCentral()
 }
-
-dependencies {
-    implementation(gradleKotlinDsl())
-    implementation(kotlin("stdlib"))
-}

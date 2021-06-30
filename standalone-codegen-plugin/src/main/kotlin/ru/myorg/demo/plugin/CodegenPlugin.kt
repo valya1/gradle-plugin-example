@@ -6,6 +6,7 @@ import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.register
+import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import ru.myorg.demo.task.CodegenTask
 
@@ -26,8 +27,8 @@ class CodegenPlugin : Plugin<Project> {
         outputDir = extension.outputDir.asFile
       }
 
-      target.tasks.withType(KotlinCompile::class.java) {
-        it.dependsOn(codegenTask)
+      target.tasks.withType<KotlinCompile> {
+        dependsOn(codegenTask)
       }
     }
 

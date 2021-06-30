@@ -8,16 +8,6 @@ import org.gradle.kotlin.dsl.property
 
 abstract class CodegenPluginExtension(project: Project) {
 
-  private val objects = project.objects
-
-  private val packageNameProp: Property<String> = objects.property<String>()
-    .convention("ru.myorg.demo")
-
-  private val messageFileProperty = objects.fileProperty()
-
-  private val outputDirProperty = objects.directoryProperty()
-    .convention(project.layout.buildDirectory.dir("src-gen"))
-
   var messageFile: RegularFile
     get() = messageFileProperty.get()
     set(value) = messageFileProperty.set(value)
@@ -27,7 +17,17 @@ abstract class CodegenPluginExtension(project: Project) {
     set(value) = outputDirProperty.set(value)
 
   var packageName: String
-    get() = packageNameProp.get()
-    set(value) = packageNameProp.set(value)
+    get() = packageNameProperty.get()
+    set(value) = packageNameProperty.set(value)
+
+  private val objects = project.objects
+
+  internal val packageNameProperty: Property<String> = objects.property<String>()
+    .convention("ru.myorg.demo")
+
+  internal val messageFileProperty = objects.fileProperty()
+
+  internal val outputDirProperty = objects.directoryProperty()
+    .convention(project.layout.buildDirectory.dir("src-gen"))
 
 }
