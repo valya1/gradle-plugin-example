@@ -6,3 +6,4 @@ pluginManagement {
 rootProject.name = "gradle-plugins-example"
 include("android-common-plugin-usage")
 include("precompiled-standalone-plugin-usage")
+include("codegen-plugin-usage")
