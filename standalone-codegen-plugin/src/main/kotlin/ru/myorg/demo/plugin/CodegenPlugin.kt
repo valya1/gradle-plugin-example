@@ -27,7 +27,7 @@ class CodegenPlugin : Plugin<Project> {
         outputDir = extension.outputDir.asFile
       }
 
-      target.tasks.withType<KotlinCompile> {
+      target.tasks.withType<KotlinCompile>().configureEach {
         dependsOn(codegenTask)
       }
     }
